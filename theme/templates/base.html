@@ -1,0 +1,31 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="{% static 'index.css' %}">
+		{% tailwind_css %}
+		<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    	<script>
+        function toggleMenu() {
+            let menuList = document.getElementById("menuList");
+            menuList.classList.toggle("max-h-0");
+            menuList.classList.toggle("max-h-[300px]");
+        }
+    	</script>
+    	<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	
+
+	<body>
+		{% include 'parts/navbar.html'%}
+		{% block content %}
+		{% endblock %}
+		{% include 'parts/footer.html'%}
+		
+		
+	</body>
+</html>

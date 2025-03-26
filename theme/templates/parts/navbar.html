@@ -1,0 +1,14 @@
+{% load static %}
+<nav class="p-4 flex items-center justify-between bg-pink-800 relative h-[70px]">
+    <div class="text-white text-xl font-bold flex flex-row"><img src="{% static 'img/logo.jpg' %}" alt="Logo" class="w-10 h-10">B&B</div>
+    <ul id="menuList" class="flex gap-8 items-center max-h-0 overflow-hidden md:max-h-full md:flex md:flex-row md:gap-6 text-white md:static absolute top-[70px] left-0 right-0 flex-col text-center bg-pink-800 transition-all duration-500">
+        <li><a href="" class="hover:text-gray-300">Home</a></li>
+        <li><a href="" class="hover:text-gray-300">About</a></li>
+        <li><a href="" class="hover:text-gray-300">Services</a></li>
+        <li><a href="" class="hover:text-gray-300">Product</a></li>
+        <li><a href="" class="hover:text-gray-300">Contact</a></li>
+    </ul>
+    <div class="md:hidden text-white text-2xl cursor-pointer" onclick="toggleMenu()">
+        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png" />
+    </div>
+</nav>
