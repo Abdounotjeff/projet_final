@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static%}
+{% block styl %}
+<link rel="stylesheet" href="{% static 'css/dist/products.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mx-auto p-6">
+    <!-- Main Product Section -->
+    <div class="min-h-screen grid grid-cols-1 md:grid-cols-4 gap-6">
+      
+      <!-- Thumbnail Navigation -->
+      <div class="flex flex-col space-y-4">
+        <img src="{% static "img/wome.png" %}" alt="Thumbnail 1" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 thumbnail">
+        <img src="{% static "img/wome.png" %}" alt="Thumbnail 2" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 thumbnail">
+        <img src="{% static "img/men.webp" %}" alt="Thumbnail 3" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 thumbnail">
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-span-2 flex justify-center zoom-container">
+        <img id="mainImage" src="{% static "img/men.webp" %}" alt="Porsche 911 GT3 RS" class="w-full md:max-w-lg rounded-lg shadow-lg zoom">
+      </div>
+
+      <!-- Product Details -->
+      <div>
+        <h1 class="text-3xl font-bold text-gray-800">Pirelli racing KITpro</h1>
+        <p class="text-xl font-semibold text-blue-600 mt-4">$195,000</p>
+        <p class="mt-4 text-gray-600">Experience the ultimate track-ready sports car with the Porsche 911 GT3 RS. Equipped with advanced aerodynamics, a powerful engine, and a lightweight design, this car is built for performance.</p>
+
+        <!-- Specifications List -->
+        <div class="mt-6">
+          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Specifications</h2>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600">
+            <li>Engine: 4.0L flat-six</li>
+            <li>Power: 520 hp</li>
+            <li>Top Speed: 198 mph</li>
+            <li>0-60 mph: 3.0 seconds</li>
+            <li>Weight: 3,153 lbs</li>
+          </ul>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <div class="mt-6">
+          <button id="addToCart" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Related Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </div>
+  </div>
+  {% endblock %}

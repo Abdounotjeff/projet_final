@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <h2 class="text-center text-2xl font-bold">السلة</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <!-- Cart Summary -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold">معلومات عن السلة</h3>
+            <p>عدد المنتجات التي في السلة: <span class="text-red-500">{{ cart_items|length }}</span></p>
+            
+            <h4 class="mt-4 font-semibold">اطبع الإستماراة:</h4>
+            <div class="mt-2">
+                <label class="block">الاسم</label>
+                <input type="text" placeholder="اكتب اسمك هنا" class="w-full p-2 border rounded">
+            </div>
+            <div class="mt-2">
+                <label class="block">رقم الهاتف</label>
+                <input type="text" placeholder="أدخل رقم الهاتف الخاص بك" class="w-full p-2 border rounded">
+            </div>
+            <div class="mt-2">
+                <label class="block">العنوان</label>
+                <select class="w-full p-2 border rounded">
+                    <option>Adrar</option>
+                    <option>Algiers</option>
+                    <option>Oran</option>
+                </select>
+            </div>
+            <div class="mt-4">
+                <input type="radio" name="delivery" checked> توصيل للمنزل
+                <input type="radio" name="delivery"> توصيل للمكتب
+            </div>
+            <div class="mt-4">
+                <p>سعر التوصيل: <span class="text-green-600">63000 دج</span></p>
+                <p>المنتجات: <span class="text-green-600">3333 دج</span></p>
+                <p>التكلفة الإجمالية: <span class="text-green-600">3333 دج</span></p>
+            </div>
+            <button class="bg-green-500 text-white p-2 w-full rounded mt-4">اطلب الآن</button>
+        </div>
+        <!-- Cart Items -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            {% for item in cart_items %}
+            <div class="flex justify-between items-center border-b py-4">
+                <img src="{{ item.image_url }}" class="w-20 h-20 object-cover rounded">
+                <div>
+                    <h4 class="font-semibold">{{ item.name }}</h4>
+                    <p class="text-red-500">دج {{ item.price }} <span class="line-through text-gray-500">دج {{ item.old_price }}</span></p>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-gray-200 p-2 rounded">-</button>
+                    <span class="mx-2">{{ item.quantity }}</span>
+                    <button class="bg-gray-200 p-2 rounded">+</button>
+                </div>
+                <button class="text-red-500">×</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,13 +1,42 @@
 {% load static %}
 <nav class="p-4 flex items-center justify-between bg-pink-800 relative h-[70px]">
-    <div class="text-white text-xl font-bold flex flex-row"><img src="{% static 'img/logo.jpg' %}" alt="Logo" class="w-10 h-10">B&B</div>
+    <div class="text-white text-xl font-bold flex flex-row">
+        <img src="{% static 'img/logo.jpg' %}" alt="Logo" class="w-10 h-10">B&B
+    </div>
+    
     <ul id="menuList" class="flex gap-8 items-center max-h-0 overflow-hidden md:max-h-full md:flex md:flex-row md:gap-6 text-white md:static absolute top-[70px] left-0 right-0 flex-col text-center bg-pink-800 transition-all duration-500">
-        <li><a href="" class="hover:text-gray-300">Home</a></li>
-        <li><a href="" class="hover:text-gray-300">About</a></li>
-        <li><a href="" class="hover:text-gray-300">Services</a></li>
-        <li><a href="" class="hover:text-gray-300">Product</a></li>
-        <li><a href="" class="hover:text-gray-300">Contact</a></li>
+        <form action="{% url 'search' %}" method="GET" class="flex items-center">
+            <input type="text" name="q" placeholder="Rechercher une lunette..." required class="p-1 rounded text-black">
+            <button type="submit" class="ml-2 text-white bg-gray-700 px-2 py-1 rounded">Rechercher</button>
+        </form>
+
+        <li><a href="{% url 'index' %}" class="hover:text-gray-300">Home</a></li>
+        <li><a href="{% url 'index' %}" class="hover:text-gray-300">Teste vision</a></li>
+
+        <!-- Dropdown for Produits -->
+<li class="relative group">
+    <a href="{% url 'products' %}" class="hover:text-gray-300">Produits</a>
+    <ul class="absolute left-0 hidden group-hover:block bg-pink-700 text-white py-2 rounded-md w-32">
+        <li><a href="{% url 'products' %}?category=jeunes" class="block px-4 py-2 hover:bg-pink-600">Jeunes</a></li>
+        <li><a href="{% url 'products' %}?category=enfants" class="block px-4 py-2 hover:bg-pink-600">Enfants</a></li>
+        <li><a href="{% url 'products' %}?category=male" class="block px-4 py-2 hover:bg-pink-600">Male</a></li>
     </ul>
+</li>
+
+        <li><a href="{% url 'index' %}#contact" class="hover:text-gray-300">Contact</a></li>
+        {% if request.user.is_authenticated %}
+            <li>
+                Bienvenue, <a href="{% url 'profile' %}" class="hover:text-gray-300">{{ request.user.username }}</a> 
+                | 
+                <a href="{% url 'logoutView' %}" class="hover:text-gray-300">Déconnecter</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'loginPage' %}" class="hover:text-gray-300">Connecter</a>
+            </li>
+        {% endif %}
+    </ul>
+
     <div class="md:hidden text-white text-2xl cursor-pointer" onclick="toggleMenu()">
         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png" />
     </div>

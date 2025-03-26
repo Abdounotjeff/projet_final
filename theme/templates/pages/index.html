@@ -1,21 +1,78 @@
 {% extends "base.html" %}
-{% load static%}
+{% load static %}
+{% block styl %}<link rel="stylesheet" href="{% static 'css/dist/index.css' %}">{% endblock %}
+{% block navbar %}
+    {% include 'parts/navbar.html' %}
+{% endblock %}
 {% block content %}
-<!-- main -->
-<main class="w-full min-h-screen flex">
-    <div class="w-1/2 min-h-screen flex flex-col justify-center items-center bg-center bg-cover cursor-pointer transition-all duration-300"
-         style="background-image: url('{% static 'img/men.webp' %}'); transition: background-image 0.3s ease-in-out;"
-         onmouseover="this.style.backgroundImage='linear-gradient(#383838ab, #383838ab), url({% static 'img/men.webp' %})'"
-         onmouseout="this.style.backgroundImage='url({% static 'img/men.webp' %})'"
-         onclick="TakeToMain()">
-        <h1 class="text-6xl text-white tracking-wider">MEN</h1>
-    </div>
-    <div class="w-1/2 min-h-screen flex flex-col justify-center items-center bg-center bg-cover cursor-pointer transition-all duration-300"
-         style="background-image: url('{% static 'img/wome.png' %}'); transition: background-image 0.3s ease-in-out;"
-         onmouseover="this.style.backgroundImage='linear-gradient(#383838ab, #383838ab), url({% static 'img/wome.png' %})'"
-         onmouseout="this.style.backgroundImage='url({% static 'img/wome.png' %})'"
-         onclick="TakeToMain()">
-        <h1 class="text-6xl text-white tracking-wider">WOMEN</h1>
-    </div>
+<main class="hero-bg flex flex-col justify-center bg-center bg-cover items-center w-full py-40 space-y-6">
+    <h1 class="text-6xl text-white text-center">Bienvenue sur <br><span class="text-violet-400">B&B Optical</span></h1>
+    <a href="#About" class="px-6 py-2 rounded-full bg-violet-500 hover:bg-violet-900 duration-300 text-white">Voir plus...</a>
 </main>
+<!-- hero end -->
+
+<!-- about start -->
+<section id="About" class="flex flex-col justify-center items-center text-center w-full py-20">
+    <h1 class="text-4xl font-bold mb-8 text-violet-500">A propos</h1>
+    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-5 mx-auto px-10">
+        <div class="flex flex-col border border-gray-400 rounded-xl p-6 w-full md:w-[500px] h-[300px] overflow-y-scroll">
+            <p class="text-start text-gray-500">Bienvenue chez B&B Optical, votre référence en matière de solutions optiques à Annaba. Spécialisés dans la vente de lunettes de vue, de soleil et de lentilles de contact, nous mettons un point d’honneur à offrir des produits de haute qualité adaptés à tous les besoins visuels.
+
+                Notre équipe de professionnels vous accompagne avec expertise pour vous aider à choisir les verres et montures qui correspondent parfaitement à votre style et à votre confort. Grâce à notre engagement envers l’innovation et le service client, nous garantissons une expérience unique et personnalisée.
+                
+                Faites confiance à B&B Optical pour une vision plus claire et un look élégant !.</div>
+        <div class="w-full md:w-[500px] h-[300px] rounded-xl overflow-hidden">
+            <img src="{% static 'img/tbn.jpg' %}" class="w-full h-full object-cover" alt="About Us">
+        </div>
+    </div>
+</section>
+<!-- about end -->
+
+<!-- upcoming events start -->
+<section id="services" class=" w-full py-20 bg-gray-50 bg-center bg-cover up-bg" >
+<div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-white">Services</h2>
+</div>
+<div class=" grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Card 1 -->
+    <div class="ml-10 bg-transparent  rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:bg-white transition duration-300">
+        <div class="flex justify-center">
+            <img src="{% static "img/vis.webp" %}" alt="test visions" class="mb-4 w-96">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800">Testez vos visions</h3>
+        <p class="text-gray-500 text-sm mb-4">réserver une séance de test de vision pour une meilleure visibilité.</p>
+        <button class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600">Détails</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class=" mr-10 bg-transparent rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:bg-white transition duration-300">
+        <div class="flex justify-center">
+            <img src="{% static "img/lun.jpg" %}" alt="Set Budget" class="mb-4 w-96">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800">Consulter les Produits opticaux</h3>
+        <p class="text-gray-500 text-sm mb-4">Consulter nos produits opticaux.</p>
+        <button class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600">Détails</button>
+    </div>
+</div>
+</section>
+
+<!-- stor start -->
+<!-- stor end -->
+
+<!-- contact start -->
+<section id="contact" class="flex flex-col items-center py-20 px-10 bg-gray-100">
+    <h1 class="font-bold text-3xl text-violet-500 mb-8 text-center">CONTACTEZ NOUS!</h1>
+    <div class="w-full md:w-1/2 bg-white rounded-lg p-6 shadow-md">
+        <form action="#" class="flex flex-col space-y-4">
+            <label for="name" class="font-semibold">Nom:</label>
+            <input type="text" name="name" id="name" class="rounded-xl h-11 p-2 shadow-inner shadow-gray-400 focus:outline-none" placeholder="Entrer votre nom" required>
+            <label for="email" class="font-semibold">Email:</label>
+            <input type="email" name="email" id="email" class="rounded-xl h-11 p-2 shadow-inner shadow-gray-400 focus:outline-none" placeholder="Entrer votre email" required>
+            <label for="message" class="font-semibold">Votre Message:</label>
+            <textarea name="message" id="message" class="rounded-xl h-[100px] md:h-auto p-2 shadow-inner shadow-gray-400 focus:outline-none" placeholder="Entrer votre message" required></textarea>
+            <input type="submit" class="button-custom" value = "Envoyer">
+        </form>
+    </div>
+</section>
+<!-- contact end -->
 {% endblock %}

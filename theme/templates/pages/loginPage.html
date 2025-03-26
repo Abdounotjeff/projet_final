@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block navbar %}
+    {% include 'parts/navbar.html' %}
+{% endblock %}
+{% block content %}
+<!-- log_in start -->
+<div class="w-full flex justify-center items-center pt-5">
+    <h1 class="text-5xl mx-auto">Bienvenue chez B&B Optical</h1>
+  </div>
+  
+  <!-- content start -->
+  <section class="flex flex-wrap w-full h-fit px-32 py-20">
+  
+    <!-- pic start -->
+    <div class="w-full md:w-1/2 flex justify-center md:justify-start">
+        <img src="{% static 'img/undraw_login_re_4vu2.svg' %}" alt="">
+    </div>
+    <!-- pic end -->
+  
+    <!-- form start -->
+    <form method="POST" action=" {% url 'loginPage' %}" class="max-w-sm w-full md:w-1/2 mx-auto">
+        {% csrf_token %}
+        <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">nom d'utilisateur</label>
+        <input type="username" name ="username" id="username" class="focus:outline-violet-400 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="ex: Spongebob123" required />
+        </div>
+        <div class="mb-5">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Mot de passe</label>
+        <input type="password" name ="password" id="password" class="focus:outline-violet-400 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+        </div>
+        <input type="submit" class="button-custom" value = "S'identifier">
+        <br>
+        {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+        <br>
+        vous n'avez pas un compte? <a href="{% url 'registerPage' %}" class="hover:underline font-bold">S'inscrire</a>
+    </form>
+    <!-- form end -->
+  
+  </section>
+  <!-- content end -->
+  
+  <!-- log_in end -->
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static%}
+{% block styl %}
+<link rel="stylesheet" href="{% static 'css/dist/products.css' %}">
+{% endblock %}
+{% block content %}
+<div class="flex justify-between bg-black p-2 text-white">
+    <a href="#" class="border border-white px-5 py-2">Women</a>
+    <p class="text-center font-bold">CODE PROMO -20% <br> "ALEX"</p>
+    <a href="#" class="border border-white px-5 py-2">Men</a>
+  </div>
+  
+  <main class="flex flex-col justify-end items-start bg-center bg-cover w-full py-44 px-32 space-y-6"
+    style="background-image: linear-gradient(#383838ab ,#383838ab) ,url('{% static 'img/hero.jpg'%}');">
+    <h1 class="text-6xl text-white">DISCOVER <span class="text-violet-400 font-bold">NOW...</span></h1>
+  </main>
+  
+  <section class="product"> 
+    <div class="text-center font-bold text-5xl p-7 text-black  ">Tendance</div>
+    <button class="pre-btn"><img src="{% static "img/arrow.png" %}" alt=""></button>
+    <button class="nxt-btn"><img src="{% static "img/arrow.png" %}" alt=""></button>
+    <div class="product-container">
+        
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+              <span class="discount-tag">50% off</span>
+              <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+              <button class="card-btn">add to wishlist</button>
+          </div>
+          <div class="product-info">
+              <h2 class="product-brand">brand</h2>
+              <p class="product-short-description">a short line about the cloth..</p>
+              <span class="price">$20</span><span class="actual-price">$40</span>
+          </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+            <span class="discount-tag">50% off</span>
+            <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+            <h2 class="product-brand">brand</h2>
+            <p class="product-short-description">a short line about the cloth..</p>
+            <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+  </div>
+  <div class="product-card">
+    <div class="product-image">
+        <span class="discount-tag">50% off</span>
+        <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+        <button class="card-btn">add to wishlist</button>
+    </div>
+    <div class="product-info">
+        <h2 class="product-brand">brand</h2>
+        <p class="product-short-description">a short line about the cloth..</p>
+        <span class="price">$20</span><span class="actual-price">$40</span>
+    </div>
+</div>
+<div class="product-card">
+  <div class="product-image">
+      <span class="discount-tag">50% off</span>
+      <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+      <button class="card-btn">add to wishlist</button>
+  </div>
+  <div class="product-info">
+      <h2 class="product-brand">brand</h2>
+      <p class="product-short-description">a short line about the cloth..</p>
+      <span class="price">$20</span><span class="actual-price">$40</span>
+  </div>
+</div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+</section>    
+</div>
+
+<section class="product"> 
+    <div class="text-center font-bold text-5xl p-7 text-black  ">PROMO!</div>
+    <button class="pre-btn"><img src="{% static "img/arrow.png" %}" alt=""></button>
+    <button class="nxt-btn"><img src="{% static "img/arrow.png" %}" alt=""></button>
+    <div class="product-container">
+        
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="{% static "img/hero.jpg" %}" class="product-thumb" alt="">
+                <button class="card-btn">add to wishlist</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">brand</h2>
+                <p class="product-short-description">a short line about the cloth..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+    </section>    
+</div>
+
+
+<section class="bg-white   Paladium">
+    
+        <div class="text-center font-bold text-5xl p-7 text-black  ">Consulter TOUT!</div>
+        <div class="pl-32 pr-32">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+    <!-- Item 1 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden h-96 w-60 ">
+        <img src="{% static "img/hero.jpg" %}" alt="Mango shirt style denim jacket in dark blue" class="w-full h-auto">
+        <div class="p-4">
+            <h3 class="text-black text-xl font-semibold">Mango shirt style denim jacket in dark blue</h3>
+            <p class="mt-2 text-gray-900 font-bold">$100.00</p>
+        </div>
+        <div class="p-4 flex justify-end">
+            <button class="focus:outline-none">
+                <svg class="w-6 h-6 text-black hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    
+    
+</div>
+</div>
+
+</section>
+{% endblock %}

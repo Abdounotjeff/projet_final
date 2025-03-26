@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Raleway", sans-serif;
+    scroll-behavior: smooth;
+}
+.hero-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.6), rgba(56, 56, 56, 0.6)), url('hero.jpg');
+}
+
+.up-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.6), rgba(56, 56, 56, 0.6)), url('hero2.webp');
+}
+
+
+.event1-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('livret.png');
+}
+.event2-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('res.jpg');
+}
+.event3-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('livret.png');
+}
+.event4-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('./img/1444x920_le-depart-du-marathon-de-paris-a-lieu-en-bas-de-l-arc-de-triomphe.webp');
+}
+.event5-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('./img/triathlon-for-beginners-2x.jpg');
+}
+.event6-bg {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.203) 70%, rgba(56, 56, 56, 0.6)), url('./img/pexels-kindelmedia-9030291.jpg');
+}
+
+
+ 
+
+.event1-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('livret.png');
+}
+.event2-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('res.jpg');
+}
+.event3-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('livret.png');
+}
+.event4-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('./img/1444x920_le-depart-du-marathon-de-paris-a-lieu-en-bas-de-l-arc-de-triomphe.webp');
+}
+.event5-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('./img/triathlon-for-beginners-2x.jpg');
+}
+.event6-bg:hover {
+    background-image: linear-gradient(rgba(56, 56, 56, 0.806), rgba(56, 56, 56, 0.6)), url('./img/pexels-kindelmedia-9030291.jpg');
+}
+
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+    overflow-x: hidden;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-pagination {
+    bottom: 10px;
+}
+
