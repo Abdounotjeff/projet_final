@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import certifi
+
+EMAIL_SSL_CERTFILE = certifi.where()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -90,6 +93,22 @@ DATABASES = {
     }
 }
 
+#email verification
+
+#EMAIL_BACKEND =     "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND =     "modules.backend.email_backend.EmailBackend"
+EMAIL_HOST =        "smtp.gmail.com"
+EMAIL_FROM =        "bajpremium1@gmail.com"
+EMAIL_HOST_USER =   "bajpremium1@gmail.com"  # Replace with your email
+EMAIL_HOST_PASSWORD="swlvjpuraoqbwslg"  # Use an app password for security
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+PASSWORD_RESET_TIMEOUT = 3600
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+
+#authentification user
+AUTH_USER_MODEL = 'modules.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

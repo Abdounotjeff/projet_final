@@ -7,6 +7,16 @@
 {% block content %}
 <!-- log_in start -->
 <div class="w-full flex justify-center items-center pt-5">
+    {% if messages %}
+    <div class="fixed top-5 right-1/2 space-y-2 z-50">
+        {% for message in messages %}
+            <div class="px-4 py-3 rounded-lg shadow-md text-white 
+                {% if message.tags == 'error' %} bg-red-500 {% elif message.tags == 'success' %} bg-green-500 {% elif message.tags == 'warning' %} bg-yellow-500 {% elif message.tags == 'info' %} bg-blue-500 {% else %} bg-gray-500 {% endif %} ">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
     <h1 class="text-5xl mx-auto">Bienvenue chez B&B Optical</h1>
   </div>
   
@@ -30,7 +40,7 @@
         <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Mot de passe</label>
         <input type="password" name ="password" id="password" class="focus:outline-violet-400 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
         </div>
-        <input type="submit" class="button-custom" value = "S'identifier">
+        <input type="submit" class="text-white w-full cursor-pointer bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800" value = "S'identifier">
         <br>
         {% if messages %}
     <ul>
